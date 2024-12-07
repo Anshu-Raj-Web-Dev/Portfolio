@@ -104,3 +104,30 @@ const initSlider = function (currentSlider) {
 }
 
 for (let i = 0, len = sliders.length; i < len; i++) { initSlider(sliders[i]); }
+
+// public/mouse-follower.js
+
+(function () {
+  var e = document.createElement('div');
+  e.className = 'mouse-follower';
+  document.body.appendChild(e);
+
+  var follower = document.querySelector('.mouse-follower');
+  var size = 10;  // size of the mouse follower
+
+  // Function to follow mouse
+  document.addEventListener('mousemove', function (event) {
+    follower.style.left = (event.pageX - size / 2) + 'px';
+    follower.style.top = (event.pageY - size / 2) + 'px';
+  });
+
+  // Customize appearance
+  follower.style.width = size + 'px';
+  follower.style.height = size + 'px';
+  follower.style.borderRadius = '50%';
+  follower.style.position = 'absolute';
+  follower.style.pointerEvents = 'none';
+  follower.style.zIndex = '9999';
+  follower.style.transition = 'all 0.1s ease-out';
+  follower.style.background = '#FFFFFF'; // inner color
+})();
