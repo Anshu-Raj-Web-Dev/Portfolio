@@ -129,7 +129,7 @@ export default function Home() {
                   </div>
 
                   <p className="section-text">
-                    I specialize in crafting custom-designed, responsive landing pages tailored to your goals, creating visually stunning and user-friendly website designs that capture your brand's essence, and developing fully functional, responsive websites built with the latest technologies to ensure a seamless user experience.
+                    I specialize in crafting custom-designed, responsive landing pages tailored to your goals, creating visually stunning and user-friendly website designs that capture your brand&apos;s essence, and developing fully functional, responsive websites built with the latest technologies to ensure a seamless user experience.
                   </p>
 
                 </div>
@@ -247,7 +247,7 @@ export default function Home() {
 
                   <div>
                     <p className="section-text">
-                      Together, we create more than websites — we build digital spaces that drive success. My work is not just about design or development; it’s about creating platforms that help brands, businesses, and individuals achieve their goals and stand out in the digital world.
+                      Together, we create more than websites — we build digital spaces that drive success. My work is not just about design or development; it&apos;s about creating platforms that help brands, businesses, and individuals achieve their goals and stand out in the digital world.
                     </p>
 
                     <p className="section-text">
@@ -454,7 +454,7 @@ export default function Home() {
           </section>
         </article>
         <div className="end">
-          <p>Let’s build something amazing together! Whether you’re a brand, a business, or an individual, I’m here to help you achieve your digital goals. Get in touch today and let’s start shaping your online presence.</p>
+          <p>Let&apos;s build something amazing together! Whether you’re a brand, a business, or an individual, I&apos;m here to help you achieve your digital goals. Get in touch today and let&apos;s start shaping your online presence.</p>
         </div>
       </main>
 
