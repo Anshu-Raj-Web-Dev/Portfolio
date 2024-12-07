@@ -131,3 +131,33 @@ for (let i = 0, len = sliders.length; i < len; i++) { initSlider(sliders[i]); }
   follower.style.transition = 'all 0.1s ease-out';
   follower.style.background = '#FFFFFF'; // inner color
 })();
+const lenis = new Lenis({
+  duration: 0.1,
+  easing: (t) => t,
+  smooth: true,
+});
+
+// Smooth scroll to top function
+document.getElementById("scroll-arrow").addEventListener("click", () => {
+  lenis.scrollTo(0, { duration: 1, easing: (t) => t });
+});
+
+// Show or hide the arrow based on scroll position
+window.addEventListener("scroll", () => {
+  const arrowContainer = document.getElementById("scroll-arrow");
+  if (window.scrollY > 200) { // Adjust this value for when to show the arrow
+      arrowContainer.classList.add("arrow-visible");
+      gsap.to(arrowContainer, { rotation: 180, yoyo: true, repeat: -1, duration: 0.5 }); // Rotation effect
+  } else {
+      arrowContainer.classList.remove("arrow-visible");
+      gsap.killTweensOf(arrowContainer); // Stop the animation when arrow is hidden
+      gsap.set(arrowContainer, { rotation: 0 }); // Reset rotation
+  }
+});
+
+// Request animation frame for Lenis
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
