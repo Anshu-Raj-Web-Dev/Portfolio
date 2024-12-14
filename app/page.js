@@ -3,16 +3,35 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useState , useRef} from "react";
 import "./page.css";
+import Typed from 'typed.js';
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const nameEl = useRef(null); // Ref for the Typed.js target
+  const [isLoading, setIsLoading] = useState(true); // Preloader state
+
+  // Typed.js initialization
+  useEffect(() => {
+    if (!isLoading) {
+      const typed = new Typed(nameEl.current, {
+        strings: ["Anshu Raj"],
+        typeSpeed: 100,
+        showCursor: false,
+        loop: true,
+      });
+
+      return () => {
+        typed.destroy(); // Cleanup on unmount
+      };
+    }
+  }, [isLoading]);
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false); // Set isLoading to false after 3 seconds
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer); // Cleanup timer
   }, []);
@@ -91,9 +110,15 @@ export default function Home() {
 
                 <div className="hero-content">
 
-                  <h1 className="h1 hero-title">Anshu Raj</h1>
+                <div className="App absolute pl-20">
+                  <h1 className="h1 hero-title pl-8" id="name">
+                  <span ref={nameEl}></span>
+                  </h1>
+                </div>
 
-                  <p className="hero-subtitle">
+                  <div className="pt-20">
+
+                  <p className="hero-subtitle pt-20">
                     Web Developer & Desginer
                   </p>
 
@@ -109,6 +134,7 @@ export default function Home() {
                     <span className="span">Contact Me</span>
 
                   </Link>
+                  </div>
 
                 </div>
 
