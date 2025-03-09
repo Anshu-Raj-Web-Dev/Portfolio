@@ -13,7 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Anshu Raj",
+  title: "Portfolio",
   description: "Web Developer",
 };
 
