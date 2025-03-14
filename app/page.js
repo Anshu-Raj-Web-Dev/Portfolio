@@ -530,7 +530,7 @@ export default function Home() {
               <a href="#" className="social-link">
                 <img src="twitter.png" />
               </a>
-            </li>
+            </li> 
 
             <li>
               <a href="#" className="social-link">
